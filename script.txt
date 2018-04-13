@@ -45,7 +45,7 @@ PASSWORD_LOCK_TIME 1
 PASSWORD_GRACE_TIME 2;
  
 
-/*b. Profile 3: "development " password life 100 days, two session per user, 30 minutes idle, no
+/*b. Profile 2: "development " password life 100 days, two session per user, 30 minutes idle, no
 failed login attempts*/
 
 CREATE PROFILE DEVELPROFILE LIMIT 
