@@ -156,8 +156,8 @@ CREATE TABLE
 CREATE TABLE 
     Logs (
         Id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,        
-        timestamp TIMESTAMP,
-        Hora_UTC INTERVAL DAY (0) TO SECOND(0),
+        times TIMESTAMP,
+        Hora_UTC VARCHAR2(50),
         Latitud NUMBER(15,10),
         Longitud NUMBER(15,10),
         Altitud NUMBER(10,2),
@@ -201,10 +201,10 @@ CREATE TABLE
         Id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,        
         Id_Piloto INTEGER,
         Id_Copiloto INTEGER,
-        Hora_Estimada_Salida INTERVAL DAY (0) TO SECOND(0),
-        Hora_Estimada_Llegada INTERVAL DAY (0) TO SECOND(0),
-        Hora_Real_Salida INTERVAL DAY (0) TO SECOND(0),
-        Hora_Real_Llegada INTERVAL DAY (0) TO SECOND(0),
+        Hora_Estimada_Salida VARCHAR2(50),
+        Hora_Estimada_Llegada VARCHAR2(50),
+        Hora_Real_Salida VARCHAR2(50),
+        Hora_Real_Llegada VARCHAR2(50),
         DuracionReal NUMERIC(10,3),
         Id_Avion_Asignado INTEGER,
         Cantidad_Pasajeros INTEGER,
@@ -223,7 +223,7 @@ CREATE TABLE
         Id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,        
         Id_ruta INTEGER,
         Fecha DATE,
-        Hora INTERVAL DAY (0) TO SECOND(0));
+        Hora VARCHAR2(50));
         
 
 alter table Auxiliares_Vuelo add constraint FK_AUXILIARES_VUELO_EMPLEADOS foreign key(Id_Empleado) references Empleados(ID);
@@ -6224,3 +6224,6 @@ INSERT INTO Auxiliares_Vuelo (Id_Empleado,Id_Itenerario) VALUES (628,92);
 INSERT INTO Auxiliares_Vuelo (Id_Empleado,Id_Itenerario) VALUES (2391,28);
 INSERT INTO Auxiliares_Vuelo (Id_Empleado,Id_Itenerario) VALUES (2415,60);
 INSERT INTO Auxiliares_Vuelo (Id_Empleado,Id_Itenerario) VALUES (1794,87);
+
+
+INSERT INTO VUELOS (ID_PILOTO, ID_COPILOTO, HORA_ESTIMADA_SALIDA, HORA_ESTIMADA_LLEGADA, HORA_REAL_SALIDA, HORA_REAL_LLEGADA, DURACIONREAL, ID_AVION_ASIGNADO, CANTIDAD_PASAJEROS, ID_RUTA, NUMERO_VUELO) VALUES (50, 700, '8:00:00', '18:00:00', '1:00:00', '8:00:00', 7.0, 5, 180, 6, 'AVA120');
