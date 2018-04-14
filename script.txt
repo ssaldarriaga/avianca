@@ -3605,20 +3605,20 @@ INSERT INTO Pilotos (Id_Empleado	,	Nivel_Ingles	,	Horas_vuelo	,	Tipo_Licencia	,	
 INSERT INTO Pilotos (Id_Empleado	,	Nivel_Ingles	,	Horas_vuelo	,	Tipo_Licencia	,	Cargo) VALUES (	500	,	'Nivel 5 Extended'	,	9480	,	'CPL ME'	,	'COMANDANTE');
 
 
-INSERT INTO Aeropuertos(Id_Ciudad,Nombre,Abreviatura,Latitud,Longitud) VALUES(19,'Aeropuerto Internacional El Edén (2)','SKAR',-83.94418,-117.66731)
-INSERT INTO Aeropuertos(Id_Ciudad,Nombre,Abreviatura,Latitud,Longitud) VALUES(2,'Aeropuerto Internacional Ernesto Cortissoz (4)','SKBQ',58.03855,68.37493)
-INSERT INTO Aeropuertos(Id_Ciudad,Nombre,Abreviatura,Latitud,Longitud) VALUES(3,'Aeropuerto Internacional El Dorado (41)','SKBO',64.66854,-100.51804)
-INSERT INTO Aeropuertos(Id_Ciudad,Nombre,Abreviatura,Latitud,Longitud) VALUES(21,'Aeropuerto Internacional Palonegro (1)','SKBG',-38.42982,-177.45717)
-INSERT INTO Aeropuertos(Id_Ciudad,Nombre,Abreviatura,Latitud,Longitud) VALUES(24,'Aeropuerto Internacional Alfonso Bonilla Aragón (9)','SKCL',33.11578,153.09764)
-INSERT INTO Aeropuertos(Id_Ciudad,Nombre,Abreviatura,Latitud,Longitud) VALUES(4,'Aeropuerto Internacional Rafael Núñez (6)','SKCG',67.31102,163.88167)
-INSERT INTO Aeropuertos(Id_Ciudad,Nombre,Abreviatura,Latitud,Longitud) VALUES(18,'Aeropuerto Internacional Camilo Daza (0)','SKCC',-39.81652,-70.92683)
-INSERT INTO Aeropuertos(Id_Ciudad,Nombre,Abreviatura,Latitud,Longitud) VALUES(29,'Aeropuerto Internacional Alfredo Vásquez Cobo (0)','SKLT',-52.49212,20.70206)
-INSERT INTO Aeropuertos(Id_Ciudad,Nombre,Abreviatura,Latitud,Longitud) VALUES(1,'Aeropuerto Internacional José María Córdova (15)','SKRG',0.65708,75.57531)
-INSERT INTO Aeropuertos(Id_Ciudad,Nombre,Abreviatura,Latitud,Longitud) VALUES(10,'Aeropuerto Internacional Los Garzones (1)','SKMR',-65.82807,-167.91246)
-INSERT INTO Aeropuertos(Id_Ciudad,Nombre,Abreviatura,Latitud,Longitud) VALUES(20,'Aeropuerto Internacional Matecaña (2)','SKPE',79.44019,-128.48178)
-INSERT INTO Aeropuertos(Id_Ciudad,Nombre,Abreviatura,Latitud,Longitud) VALUES(14,'Aeropuerto Internacional Almirante Padilla (3)','SKRH',7.84578,131.73089)
-INSERT INTO Aeropuertos(Id_Ciudad,Nombre,Abreviatura,Latitud,Longitud) VALUES(28,'Aeropuerto Internacional Gustavo Rojas Pinilla (4)','SKSP',-49.70921,15.66813)
-INSERT INTO Aeropuertos(Id_Ciudad,Nombre,Abreviatura,Latitud,Longitud) VALUES(15,'Aeropuerto Internacional Simón Bolívar (0)','SKSM',13.86378,-89.33754)
+INSERT INTO Aeropuertos(Id_Ciudad,Nombre,Abreviatura,Latitud,Longitud) VALUES(19,'Aeropuerto Internacional El Edén (2)','SKAR',-83.94418,-117.66731);
+INSERT INTO Aeropuertos(Id_Ciudad,Nombre,Abreviatura,Latitud,Longitud) VALUES(2,'Aeropuerto Internacional Ernesto Cortissoz (4)','SKBQ',58.03855,68.37493);
+INSERT INTO Aeropuertos(Id_Ciudad,Nombre,Abreviatura,Latitud,Longitud) VALUES(3,'Aeropuerto Internacional El Dorado (41)','SKBO',64.66854,-100.51804);
+INSERT INTO Aeropuertos(Id_Ciudad,Nombre,Abreviatura,Latitud,Longitud) VALUES(21,'Aeropuerto Internacional Palonegro (1)','SKBG',-38.42982,-177.45717);
+INSERT INTO Aeropuertos(Id_Ciudad,Nombre,Abreviatura,Latitud,Longitud) VALUES(24,'Aeropuerto Internacional Alfonso Bonilla Aragón (9)','SKCL',33.11578,153.09764);
+INSERT INTO Aeropuertos(Id_Ciudad,Nombre,Abreviatura,Latitud,Longitud) VALUES(4,'Aeropuerto Internacional Rafael Núñez (6)','SKCG',67.31102,163.88167);
+INSERT INTO Aeropuertos(Id_Ciudad,Nombre,Abreviatura,Latitud,Longitud) VALUES(18,'Aeropuerto Internacional Camilo Daza (0)','SKCC',-39.81652,-70.92683);
+INSERT INTO Aeropuertos(Id_Ciudad,Nombre,Abreviatura,Latitud,Longitud) VALUES(29,'Aeropuerto Internacional Alfredo Vásquez Cobo (0)','SKLT',-52.49212,20.70206);
+INSERT INTO Aeropuertos(Id_Ciudad,Nombre,Abreviatura,Latitud,Longitud) VALUES(1,'Aeropuerto Internacional José María Córdova (15)','SKRG',0.65708,75.57531);
+INSERT INTO Aeropuertos(Id_Ciudad,Nombre,Abreviatura,Latitud,Longitud) VALUES(10,'Aeropuerto Internacional Los Garzones (1)','SKMR',-65.82807,-167.91246);
+INSERT INTO Aeropuertos(Id_Ciudad,Nombre,Abreviatura,Latitud,Longitud) VALUES(20,'Aeropuerto Internacional Matecaña (2)','SKPE',79.44019,-128.48178);
+INSERT INTO Aeropuertos(Id_Ciudad,Nombre,Abreviatura,Latitud,Longitud) VALUES(14,'Aeropuerto Internacional Almirante Padilla (3)','SKRH',7.84578,131.73089);
+INSERT INTO Aeropuertos(Id_Ciudad,Nombre,Abreviatura,Latitud,Longitud) VALUES(28,'Aeropuerto Internacional Gustavo Rojas Pinilla (4)','SKSP',-49.70921,15.66813);
+INSERT INTO Aeropuertos(Id_Ciudad,Nombre,Abreviatura,Latitud,Longitud) VALUES(15,'Aeropuerto Internacional Simón Bolívar (0)','SKSM',13.86378,-89.33754);
 
 INSERT INTO Rutas (Id_Aeropuerto_Origen,Id_Aeropuerto_Destino,Distancia,Frecuencia_Semanal,Id_Avion_Requerido,Promedio_Horas,Cantidad_Tripulantes) VALUES (9,1,190,2,10,0.2,2);
 INSERT INTO Rutas (Id_Aeropuerto_Origen,Id_Aeropuerto_Destino,Distancia,Frecuencia_Semanal,Id_Avion_Requerido,Promedio_Horas,Cantidad_Tripulantes) VALUES (9,1,190,8,29,0.2,7);
