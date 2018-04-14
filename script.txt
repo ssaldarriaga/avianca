@@ -90,7 +90,7 @@ GRANT CREATE SESSION TO DEVELUSER2;
 
 /*7. Lock one user associate with clerk profile*/
 
-ALTER USER clerk1 ACCOUNT LOCK;
+ALTER USER CLERKUSER1 ACCOUNT LOCK;
 
 /*8. Create tables with its columns according to your normalization*/
 
