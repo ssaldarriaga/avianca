@@ -156,7 +156,7 @@ CREATE TABLE
 CREATE TABLE 
     Logs (
         Id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,        
-        times TIMESTAMP,
+        times NUMBER(10,0),
         Hora_UTC VARCHAR2(50),
         Posicion VARCHAR2(255),
         Altitud NUMBER(10,2),
