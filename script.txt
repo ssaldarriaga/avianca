@@ -155,6 +155,17 @@ CREATE TABLE
         Numero_Vuelo VARCHAR2(50));
         
 CREATE TABLE 
+    Pasajeros (
+        Id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+        Nombres VARCHAR2(255),
+        APellidos VARCHAR2(255),
+        Documento VARCHAR2(20),
+        Tipo_Documento VARCHAR2(50),
+		CONSTRAINT check_pasajeros_Tipo_Documento
+		CHECK (Tipo_Documento IN('Cédula','Pasaporte','DNI','Cédula Extranjería'))
+    );
+
+CREATE TABLE 
     Check_In (
         Id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,        
         Id_Vuelo INTEGER,
@@ -3940,6 +3951,108 @@ INSERT INTO Auxiliares_Vuelo (Id_Empleado,Id_Vuelo) VALUES (1636,5);
 INSERT INTO Auxiliares_Vuelo (Id_Empleado,Id_Vuelo) VALUES (1327,19);
 INSERT INTO Auxiliares_Vuelo (Id_Empleado,Id_Vuelo) VALUES (693,2);
 
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Henry','Molina','1667030805299','Cédula Extranjería');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Dustin','Marquez','1691082256399','Pasaporte');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Liberty','Morgan','1666060433499','Pasaporte');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Barclay','Berger','1673090678399','Cédula Extranjería');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Jillian','Griffith','1662031678099','Pasaporte');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Maisie','Kidd','1670010819899','Cédula');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Thaddeus','Drake','1676071687399','Cédula Extranjería');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Pearl','Collier','1684020264399','Pasaporte');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Lucian','Gordon','1674112900999','Cédula');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Kylie','Bird','1653033085499','Pasaporte');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Cairo','Schneider','1654092711599','Pasaporte');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Cherokee','Hogan','1682082373599','DNI');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Aubrey','Miller','1622041695099','Cédula');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Hoyt','Roberts','1658012828099','DNI');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Ira','Osborn','1695040761799','DNI');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Abbot','Love','1647122703899','DNI');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Brenda','Potter','1602031222599','DNI');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Nash','Oconnor','1633061363799','Cédula');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Ariana','Arnold','1668052711299','DNI');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Aidan','Saunders','1613010546799','Pasaporte');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Nomlanga','Kline','1622082490599','Cédula Extranjería');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Rinah','Terry','1646051309199','Cédula');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Maris','Ayers','1697100230799','Pasaporte');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Hunter','Lynn','1609050970899','Cédula Extranjería');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Guinevere','Berger','1697033034899','DNI');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Gemma','Alford','1687032800799','Cédula Extranjería');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Dane','Walter','1609041654199','Cédula');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Kevyn','Villarreal','1624120760699','Pasaporte');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Eric','Henry','1601102068599','Pasaporte');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Sonia','York','1638011620999','Cédula');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Jada','Ingram','1618020182699','Cédula');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Ulric','Morgan','1632080927399','Pasaporte');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Benjamin','Warner','1641110501499','Pasaporte');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Blair','Chen','1605112026899','DNI');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Kristen','Crawford','1682060203699','Cédula Extranjería');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Quinn','Frederick','1603061346799','Cédula Extranjería');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Declan','Hickman','1603030969699','Cédula Extranjería');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Caesar','Curry','1637032749499','Cédula');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Shay','Harrington','1693052233799','Cédula');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Hanna','Foley','1667033063499','Cédula Extranjería');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Chelsea','Bishop','1651011522099','Cédula');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Declan','Blevins','1694031861699','Pasaporte');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Drew','Duran','1667011403799','Pasaporte');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Abraham','Potter','1637071620199','DNI');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Aladdin','Payne','1648042818199','Pasaporte');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Ezra','Shepard','1601120584199','Pasaporte');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Cassady','Barber','1610120161999','Cédula Extranjería');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Mufutau','Salazar','1655101930299','Cédula Extranjería');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Ryder','Wiggins','1651101509599','DNI');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Nolan','Ingram','1683061224799','Pasaporte');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Talon','Spencer','1694060625599','Cédula');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Martha','Key','1627090970099','DNI');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Marny','James','1660112030599','DNI');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Herman','Moody','1683072684299','Cédula');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Jacqueline','Vaughan','1669051413399','Pasaporte');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Carla','Ortiz','1624080468499','Pasaporte');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Lunea','Warren','1663120372999','Pasaporte');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Galena','Logan','1696102639799','Cédula');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Tatiana','Elliott','1633081742999','Cédula Extranjería');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Finn','Griffin','1692032384399','Pasaporte');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Ahmed','Webb','1628050476899','Cédula Extranjería');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Maxine','Madden','1687010307699','Pasaporte');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Guy','Sexton','1661011254099','Pasaporte');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Regan','Morrison','1632031779299','Pasaporte');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Allen','Gonzales','1629112965299','DNI');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Malachi','Campos','1691062568199','DNI');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Bethany','Wood','1652050507799','DNI');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Desirae','Peck','1604092101299','Cédula Extranjería');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Mariam','Alford','1658031119099','DNI');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Sebastian','Reeves','1667091157199','DNI');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Howard','Gillespie','1613061535799','Cédula Extranjería');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('McKenzie','Lynn','1670062155799','Cédula Extranjería');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Acton','Le','1622070347499','Cédula');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Malik','Saunders','1605100530599','Cédula Extranjería');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Duncan','Barnes','1684121029099','Cédula');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Oren','Dotson','1686041922699','Pasaporte');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Fallon','Reynolds','1646032924999','Pasaporte');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Ivor','Wyatt','1645030442799','Cédula');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Marshall','Daniel','1690122699199','Pasaporte');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Darrel','Watson','1607100687099','Cédula');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Darryl','Hatfield','1634090521599','Cédula');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Gillian','Vang','1627092225499','Pasaporte');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Helen','Steele','1614091339999','Cédula Extranjería');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Eugenia','Bell','1613110738999','Cédula Extranjería');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Tyrone','Lindsey','1699030783299','Cédula');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Nicole','Schwartz','1644102945399','Pasaporte');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Moses','Lloyd','1620081444399','DNI');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Amethyst','Day','1670090725399','Pasaporte');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Deacon','Blanchard','1611040146699','DNI');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Abel','Lynch','1621041225599','Cédula');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Laith','Buckley','1690100846699','Cédula');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Kaye','Clemons','1658021736199','Pasaporte');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Laith','Chandler','1693071500599','DNI');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Chase','Allen','1652010220999','Pasaporte');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Constance','Parsons','1628052566299','Cédula');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Ulysses','Rose','1628021714699','Cédula Extranjería');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Josephine','Griffin','1672010703299','Cédula Extranjería');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Baxter','Hayes','1691062382099','Cédula');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Erin','Shannon','1606120383399','Cédula');
+INSERT INTO Pasajeros (Nombres,APellidos,Documento,Tipo_Documento) VALUES ('Brock','Cash','1649051982199','Pasaporte');
+
+
 
 INSERT INTO Check_in (Id_Vuelo,Nombres,Apellidos,Documento,Tipo_Documento,Codigo_Confirmacion_Checkin,Nombre_Contacto,Id_Ciudad_Contacto,Correo_Contacto,Telefono_Contacto) VALUES (1,'Kiona','Wynn',99280220,'DNI','X2G 4V0','Sade C. Fisher',18,'diam.Pellentesque.habitant@amet.org','1-857-274-9004');
 INSERT INTO Check_in (Id_Vuelo,Nombres,Apellidos,Documento,Tipo_Documento,Codigo_Confirmacion_Checkin,Nombre_Contacto,Id_Ciudad_Contacto,Correo_Contacto,Telefono_Contacto) VALUES (1,'Jamalia','Sears',99158707,'Cédula Extranjería','G6J 3X6','Stewart W. Sharpe',21,'aliquet.lobortis@Quisquepurussapien.ca','1-742-780-8398');
@@ -4151,4 +4264,4 @@ UPDATE AVIONES SET CAPACIDAD = 60 WHERE capacidad is null AND MOD(ID, 4) = 0;
 UPDATE AVIONES SET CAPACIDAD = 140 WHERE capacidad is null AND MOD(ID, 6) = 0;
 UPDATE AVIONES SET CAPACIDAD = 105 WHERE capacidad is null;
 UPDATE VUELOS SET ESTADO = 'Confirmado';
-
+UPDATE VUELOS SET CANTIDAD_PASAJEROS = 0;
