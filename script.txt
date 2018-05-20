@@ -4291,8 +4291,6 @@ CREATE OR REPLACE VIEW Aviones_Disponibles AS
             INNER JOIN
         AVIONES A ON (V.ID_AVION_ASIGNADO = A.ID);
     
-SELECT * FROM Aviones_Disponibles WHERE ID_VUELO_FILTRO = 2 AND ROWNUM < 2;
-
 /* Punto 2 */
 CREATE OR REPLACE PROCEDURE Asignar_tripulacion(id_vuelo IN INTEGER) AS
     AVION INTEGER;
@@ -4310,6 +4308,17 @@ BEGIN
         Aviones_Disponibles 
     WHERE 
         ID_VUELO_FILTRO = id_vuelo AND ROWNUM <= 1;   
+        
+    /* SE BUSCA LA CIUDAD DE ORIGEN DEL VUELO */
+    SELECT 
+        A.ID_CIUDAD INTO ID_CIUDAD
+    FROM 
+        VUELOS V
+            INNER JOIN
+        RUTAS R ON (V.ID_RUTA = R.ID AND V.ID = id_vuelo)
+            INNER JOIN
+        AEROPUERTOS A ON (R.ID_AEROPUERTO_ORIGEN = A.ID);
+
     /* Se consulta el piloto */
     SELECT 
         P.ID INTO PILOTO 
@@ -4317,13 +4326,11 @@ BEGIN
         PILOTOS P 
             INNER JOIN 
         EMPLEADOS E ON (P.ID_EMPLEADO = E.ID AND E.ESTADO = 'ACTIVO' AND E.HORAS_DESCANSO >= 2) 
-    WHERE 
-        P.ID NOT IN (SELECT ID_PILOTO FROM VUELOS)
-        AND
-        P.ID NOT IN (SELECT ID_COPILOTO FROM VUELOS)
+    WHERE
+        UBICACION_ACTUAL = ID_CIUDAD
         AND
         ROWNUM <= 1;
-        
+
     /* Se consulta el copiloto */
     SELECT 
         P.ID INTO COPILOTO 
@@ -4332,14 +4339,14 @@ BEGIN
             INNER JOIN 
         EMPLEADOS E ON (P.ID_EMPLEADO = E.ID AND E.ESTADO = 'ACTIVO' AND E.HORAS_DESCANSO >= 2) 
     WHERE 
-        P.ID <> PILOTO AND ROWNUM <= 1
+        P.ID <> PILOTO
         AND
-        P.ID NOT IN (SELECT ID_COPILOTO FROM VUELOS)
-        AND
-        P.ID NOT IN (SELECT PILOTO FROM VUELOS);    
+        UBICACION_ACTUAL = ID_CIUDAD
+        AND 
+        ROWNUM <= 1;
     /* SE ASIGNA EL PILOTO Y COPILOTO */
 
-    UPDATE VUELOS SET ID_PILOTO = PILOTO, ID_COPILOTO = COPILOTO WHERE ID = id_vuelo;
+    UPDATE VUELOS SET ID_PILOTO = PILOTO, ID_COPILOTO = COPILOTO, ID_AVION_ASIGNADO = AVION WHERE ID = id_vuelo;
     /* Se define la cantidad de auxiliares */
     IF CAPACIDAD BETWEEN 20 AND 49 THEN
        NUMERO_AUXILIARES := 1;
@@ -4356,17 +4363,7 @@ BEGIN
     WHERE ID = id_vuelo;
     IF DURACION > 6 THEN
         NUMERO_AUXILIARES := NUMERO_AUXILIARES + 1;
-    END IF;
-    /* SE BUSCA LA CIUDAD DE ORIGEN DEL VUELO */
-    SELECT 
-        A.ID_CIUDAD INTO ID_CIUDAD
-    FROM 
-        VUELOS V
-            INNER JOIN
-        RUTAS R ON (V.ID_RUTA = R.ID AND V.ID = id_vuelo)
-            INNER JOIN
-        AEROPUERTOS A ON (R.ID_AEROPUERTO_ORIGEN = A.ID); 
-        
+    END IF;        
     /* SE INSERTAN LOS AUXILIARES */
     INSERT INTO AUXILIARES_VUELO (ID_EMPLEADO, ID_VUELO)
     SELECT 
@@ -4379,7 +4376,11 @@ BEGIN
         AND E.HORAS_DESCANSO >= 2
         AND UBICACION_ACTUAL = ID_CIUDAD
         AND ROWNUM <= NUMERO_AUXILIARES;
+    
+    /* SE CAMBIA EL ESTADO A CONFIRMADO */
+    UPDATE VUELOS SET ESTADO = 'Confirmado' WHERE ID = id_vuelo;
 END;
+
 
 /* PUNTO 3 */
 CREATE OR REPLACE PROCEDURE spCheck_in(ID_VUELO IN INTEGER,
